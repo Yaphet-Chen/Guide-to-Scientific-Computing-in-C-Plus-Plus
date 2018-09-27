@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: HelloWorld
+all: HelloWorld MathExample
 
 #mkdir
 checkdir:
@@ -26,6 +26,8 @@ checkdir:
 # $^ 指代所有前置条件，之间以空格分隔。
 
 HelloWorld: HelloWorld.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+MathExample: MathExample.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
