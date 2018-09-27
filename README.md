@@ -1,2 +1,2 @@
-# Guide-to-Scientific-Computing-in-C-
+# Guide-to-Scientific-Computing-in-C-Plus-Plus
 C++ implementation of examples
