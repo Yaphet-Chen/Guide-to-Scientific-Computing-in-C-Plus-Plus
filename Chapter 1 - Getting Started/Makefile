@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: HelloWorld MathExample
+all: HelloWorld MathExample Variables
 
 #mkdir
 checkdir:
@@ -29,7 +29,9 @@ HelloWorld: HelloWorld.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 MathExample: MathExample.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-
+Variables: Variables.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+	
 #clean
 .PHONY:clean
 clean:
