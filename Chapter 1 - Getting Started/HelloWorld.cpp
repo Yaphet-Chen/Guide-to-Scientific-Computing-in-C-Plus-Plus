@@ -1,11 +1,11 @@
-/**
- * @Brief My first c++ program
+/*---------------------------------------------------------------------------*\
+ * @Brief       : My first c++ program
  * 
- * @File HelloWorld.cpp
- * @Author Yipei Chen
- * @Email ychendh@connect.ust.hk
- * @Date 2018-09-28
- */
+ * @File        : HelloWorld.cpp
+ * @Author      : Yipei Chen
+ * @Email       : ychendh@connect.ust.hk
+ * @Date        : 2018-09-28
+\*---------------------------------------------------------------------------*/
 
 #include <iostream>
 

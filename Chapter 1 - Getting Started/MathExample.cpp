@@ -1,11 +1,11 @@
-/**
- * @Brief Laid particular stress on some math constants, functions and operations.
+/*---------------------------------------------------------------------------*\
+ * @Brief       : Laid particular stress on some math constants, functions and operations.
  * 
- * @File MathExample.cpp
- * @Author Yipei Chen
- * @Email ychendh@connect.ust.hk
- * @Date 2018-09-28
- */
+ * @File        : MathExample.cpp
+ * @Author      : Yipei Chen
+ * @Email       : ychendh@connect.ust.hk
+ * @Date        : 2018-09-28
+\*---------------------------------------------------------------------------*/
 
 #include <iostream>
 #include <cmath>
