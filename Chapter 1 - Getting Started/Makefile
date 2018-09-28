@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: HelloWorld MathExample Variables
+all: HelloWorld MathExample Variables SimpleIO
 
 #mkdir
 checkdir:
@@ -30,6 +30,8 @@ HelloWorld: HelloWorld.o
 MathExample: MathExample.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 Variables: Variables.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+SimpleIO: SimpleIO.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 	
 #clean
