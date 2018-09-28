@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: IfElseStatement
+all: IfElseStatement WhileStatement
 
 #mkdir
 checkdir:
@@ -26,6 +26,8 @@ checkdir:
 # $^ 指代所有前置条件，之间以空格分隔。
 
 IfElseStatement: IfElseStatement.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+WhileStatement: WhileStatement.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
