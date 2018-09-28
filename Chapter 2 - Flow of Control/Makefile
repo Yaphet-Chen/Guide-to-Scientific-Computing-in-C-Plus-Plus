@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: HelloWorld MathExample Variables SimpleIO ExceptionHandle
+all: IfElseStatement
 
 #mkdir
 checkdir:
@@ -25,15 +25,7 @@ checkdir:
 # $< 指代第一个前置条件。
 # $^ 指代所有前置条件，之间以空格分隔。
 
-HelloWorld: HelloWorld.o
-	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-MathExample: MathExample.o
-	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-Variables: Variables.o
-	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-SimpleIO: SimpleIO.o
-	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-ExceptionHandle: ExceptionHandle.o
+IfElseStatement: IfElseStatement.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
