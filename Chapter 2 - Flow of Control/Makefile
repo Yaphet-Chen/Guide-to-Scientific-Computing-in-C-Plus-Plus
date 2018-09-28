@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: IfElseStatement WhileStatement
+all: IfElseStatement WhileStatement ForStatement
 
 #mkdir
 checkdir:
@@ -28,6 +28,8 @@ checkdir:
 IfElseStatement: IfElseStatement.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 WhileStatement: WhileStatement.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+ForStatement: ForStatement.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
