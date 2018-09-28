@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: HelloWorld MathExample Variables SimpleIO
+all: HelloWorld MathExample Variables SimpleIO ExceptionHandle
 
 #mkdir
 checkdir:
@@ -33,7 +33,8 @@ Variables: Variables.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 SimpleIO: SimpleIO.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-	
+ExceptionHandle: ExceptionHandle.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 #clean
 .PHONY:clean
 clean:
