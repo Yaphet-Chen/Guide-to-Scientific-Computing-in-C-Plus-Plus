@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <cmath>
-#include <cfloat> // DBL_EPSILON is defined in <cfloat>
+#include <cfloat> // DBL_EPSILON ~ 2e-16 is defined in <cfloat>
 
 int main(int argc, char *argv[])
 {
