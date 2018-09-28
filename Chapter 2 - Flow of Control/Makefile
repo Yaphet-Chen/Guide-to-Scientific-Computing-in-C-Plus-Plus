@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: IfElseStatement WhileStatement ForStatement SwitchStatement
+all: IfElseStatement WhileStatement ForStatement SwitchStatement Ch2_Tips
 
 #mkdir
 checkdir:
@@ -32,6 +32,8 @@ WhileStatement: WhileStatement.o
 ForStatement: ForStatement.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 SwitchStatement: SwitchStatement.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+Ch2_Tips: Ch2_Tips.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
