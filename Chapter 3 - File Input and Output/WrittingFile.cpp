@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------*\
- * @Brief       : Writting to file and setting the Precision of the Output
+ * @Brief       : Writting to file & Tips: Controlling Output Format
  * 
  * @File        : WrittingFile.cpp
  * @Author      : Yipei Chen
@@ -56,6 +56,20 @@ int main(int argc, char *argv[])
     write_output << z << "\n";  // The variable x is only given to eight significant figures
 
     write_output.close();
+
+    /*++++++++++++++++++++++++++ Setting the Format of the Output ++++++++++++++++++++++++*/
+    std::ofstream write_file("OutputFormatted.dat");
+    write_file.setf(std::ios::scientific); // Output in scientific format.
+    write_file.setf(std::ios::showpos);    // Always showing a + or − sign.
+    /* In this case the precision specified is 
+    1. The number of digits after the decimal point
+    2. When scientific format is used zeros are added after the decimal point to ensure that all output is of exactly the same width.*/
+    write_file.precision(13);
+
+    double x0 = 3.4, y0 = 0.0000855, z0 = 984.424;
+    // Write numbers as +x.<13digits>e+00 (width 20)
+    write_file << x0 << " " << y0 << " " << z0 << "\n";
+    write_file.close();
 
     return 0;
 }
