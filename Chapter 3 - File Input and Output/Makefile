@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: RedirectConsoleOutput WrittingFile ReadingFile
+all: RedirectConsoleOutput WrittingFile ReadingFile ReadingCommand
 
 #mkdir
 checkdir:
@@ -30,6 +30,8 @@ RedirectConsoleOutput: RedirectConsoleOutput.o
 WrittingFile: WrittingFile.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 ReadingFile: ReadingFile.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+ReadingCommand: ReadingCommand.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
