@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-    /* * * * * * * * * * Tip 1: Never put semi-colon ; after for, while or if * * * * * * * * * * * */
+    /*+++++++++++++++++++ Tip 1: Never put semi-colon ; after for, while or if +++++++++++++++++++++++*/
     double x = 2.0;
     for (int i = 0; i < 5; i++);
     {
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     }
     std::cout << "x = " << x << "\n"; // Output x = 4 instead of  2*2^5 = 64
 
-    /* * * * * * * * * * * * * * * * * Tip 2: Counting from Zero * * * * * * * * * * * * * * * * */
+    /*+++++++++++++++++++++++++++++++++++++ Tip 2: Counting from Zero +++++++++++++++++++++++++++++++*/
     // This loop is natural for MATLAB programmers
     for (int j = 1; j <= 4; j++)
     {
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     /*The reason for this is that while M ATLAB and Fortran use one-based indexing
     where array indexing starts at 1, C++ uses zero-based indexing.*/
 
-    /* * * * * * * * * * * * * * * * Tip 3: Equality Versus Assignment * * * * * * * * * * * * * * * * */
+    /*+++++++++++++++++++++++++++++ Tip 3: Equality Versus Assignment +++++++++++++++++++++++++++++++*/
     x == 2 + 2;
     // This erroneous line has no effect
     // After testing x against the value 4, the true/false answer is discarded.
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     std::cout << "x = " << x << "\n";
     // The GNU C++ compiler will give warnings with flag -Wall, and errors with flag -Werror
 
-    /* * * * * * * * * * * * * * Tip 5: Comparing Two Floating Point Numbers * * * * * * * * * * * * * */
+    /*++++++++++++++++++++++++ Tip 5: Comparing Two Floating Point Numbers ++++++++++++++++++++++++++*/
     double p = 5.0, q = 5.0 + DBL_EPSILON;
     int k = 1;
     if (fabs(p - q) < p * DBL_EPSILON)

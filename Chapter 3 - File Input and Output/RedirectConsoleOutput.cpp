@@ -1,3 +1,12 @@
+/*---------------------------------------------------------------------------*\
+ * @Brief       : The word cerr is a contraction of console error.
+ * 
+ * @File        : RedirectConsoleOutput.cpp
+ * @Author      : Yipei Chen
+ * @Email       : ychendh@connect.ust.hk
+ * @Date        : 2018-09-29
+\*---------------------------------------------------------------------------*/
+
 #include <iostream>
 
 int main(int argc, char *argv[])
