@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: Pointers
+all: Pointers DynamicAllocation
 
 #mkdir
 checkdir:
@@ -26,6 +26,8 @@ checkdir:
 # $^ 指代所有前置条件，之间以空格分隔。
 
 Pointers: Pointers.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+DynamicAllocation: DynamicAllocation.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
