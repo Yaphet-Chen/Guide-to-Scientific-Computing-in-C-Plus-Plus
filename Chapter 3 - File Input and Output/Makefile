@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: RedirectConsoleOutput WrittingFile
+all: RedirectConsoleOutput WrittingFile ReadingFile
 
 #mkdir
 checkdir:
@@ -29,7 +29,9 @@ RedirectConsoleOutput: RedirectConsoleOutput.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 WrittingFile: WrittingFile.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
-	
+ReadingFile: ReadingFile.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+
 #clean
 .PHONY:clean
 clean:
