@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------*\
- * @Brief       : Dynamic Allocation of Memory for Arrays
+ * @Brief       : Dynamic Allocation of Memory for Arrays & Tips: Pointers
  * 
  * @File        : DynamicAllocation.cpp
  * @Author      : Yipei Chen
@@ -8,6 +8,7 @@
 \*---------------------------------------------------------------------------*/
 
 #include <iostream>
+#include <cassert>
 
 int main(int argc, char *argv[])
 {
@@ -54,12 +55,33 @@ int main(int argc, char *argv[])
 
     /*++++++++++++++++++++++++++++++++ Irregularly Sized Matrices +++++++++++++++++++++++++++++++++++*/
     int **B;
-    B = new int *[1000];
-    for (int i = 0; i < 1000; i++)
+    int N = 1000; // Matrix size
+    B = new int *[N];
+    /*++++++++++++++++++++++++++++++++ Tip 2: Safe Dynamic Allocation +++++++++++++++++++++++++++++++*/
+    /* There may be circumstancesunder which it is not possible to allocate memory
+    1. The number of items in an array has been set with a negative argument
+    2. There is not enough physical memory available to the program.
+    Setting the number of elements in an array to a negative number is easier than you might think.
+    1. If the size of a problem is configured via an input file, then a size may easily be mistyped.
+    2. overflow error: If a number is assigned to an integer that is larger than the maximum value that
+    can be stored by that integer, then the integer value stored may actually be a negative number.
+    The default behaviour is to throw an exception when a memory error is encountered and an exception could terminate your program. */
+    assert(B != NULL);
+    for (int i = 0; i < N; i++)
     {
         B[i] = new int[i + 1];
+        assert(B[i] != NULL);
     }
-    for (int i = 0; i < 1000; i++)
+
+    /*+++++++++++++++++++++++++++++ Tip 3: Every new Has a delete ++++++++++++++++++++++++++++++++++++*/
+    /* There is no automatic garbage collection for memory which is no longer accessible. The problem
+    may arise when memory is allocated inside functions, but not freed before the function ends.
+    There are several ways around this issue. 
+    1. Ensure that every new in your program is matched with a delete somewhere else.
+    2. Make sure that inaccessible or unnecessary memory is freed up is to run your program through a memory debugger.
+    3. Use shared pointers. These are an advanced language feature which allow memory to be automatically de-allocated
+    once there is no longer any other part of the program which can access it. */
+    for (int i = 0; i < N; i++)
     {
         delete[] B[i];
     }
