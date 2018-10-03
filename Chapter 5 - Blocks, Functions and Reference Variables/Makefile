@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: Blocks
+all: Blocks SimpleFunctions
 
 #mkdir
 checkdir:
@@ -26,6 +26,8 @@ checkdir:
 # $^ 指代所有前置条件，之间以空格分隔。
 
 Blocks: Blocks.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+SimpleFunctions: SimpleFunctions.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
