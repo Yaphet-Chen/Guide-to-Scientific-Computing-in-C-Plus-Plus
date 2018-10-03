@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: Blocks SimpleFunctions
+all: Blocks SimpleFunctions FunctionWithPointers
 
 #mkdir
 checkdir:
@@ -28,6 +28,8 @@ checkdir:
 Blocks: Blocks.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 SimpleFunctions: SimpleFunctions.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+FunctionWithPointers: FunctionWithPointers.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
