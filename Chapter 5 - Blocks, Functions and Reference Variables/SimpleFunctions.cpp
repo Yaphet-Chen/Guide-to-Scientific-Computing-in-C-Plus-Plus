@@ -12,10 +12,18 @@
 
 #include <iostream>
 
-/* Function prototype: tells the compiler what input variables are required (arguments), and what variable, if any, is returned. */
+/* Function prototype: tells the compiler what input variables are required (arguments), and what variable, if any, is returned.
+It is good practice to give the function signature prototypes before you write the implementation. */
 double CalculateMinimum(double a, double b); // Note that the function prototype ends with a semi-colon.
 void PrintPassOrFail(int score, int passMark);
 void HasNoEffect(double x);
+
+/* We can skip the function prototype by writing the function implementation before its first use.
+But it will not be possible to order the functions if two functions are mutually recursive*/
+double Square(double x)
+{
+    return x * x;
+}
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +41,7 @@ int main(int argc, char *argv[])
     HasNoEffect(z);
     std::cout << "z in the main function: " << z << "\n"; // will print out 2.0
 
+    std::cout << "Square of 2 = " << Square(2) << "\n";
     return 0;
 }
 
