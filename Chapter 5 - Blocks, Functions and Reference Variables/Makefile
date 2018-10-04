@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: Blocks SimpleFunctions FunctionWithPointers ArraysFunctions
+all: Blocks SimpleFunctions FunctionWithPointers ArraysFunctions CalculateScalarProduct
 
 #mkdir
 checkdir:
@@ -32,6 +32,8 @@ SimpleFunctions: SimpleFunctions.o
 FunctionWithPointers: FunctionWithPointers.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 ArraysFunctions: ArraysFunctions.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+CalculateScalarProduct: CalculateScalarProduct.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
