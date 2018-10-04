@@ -47,11 +47,11 @@ int main(int argc, char *argv[])
 void CalculateCubeRoot(double &x, double K, double tolerance, int maxIterations)
 {
     int iterations = 0;
-    double residual = x * x * x - K;
+    double residual = pow(x, 3.0) - K;
     while ((fabs(residual) > tolerance) && (iterations < maxIterations))
     {
         x = x - (pow(x, 3.0) - K) / (3.0 * pow(x, 2.0));
-        residual = x * x * x - K;
+        residual = pow(x, 3.0) - K;
         iterations++;
     }
     std::cout << "the cube root of K = " << K << " is " << x << "\n";
