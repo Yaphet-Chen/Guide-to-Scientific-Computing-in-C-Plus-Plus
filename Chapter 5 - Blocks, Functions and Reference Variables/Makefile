@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: Blocks SimpleFunctions FunctionWithPointers ArraysFunctions CalculateScalarProduct ReferenceVariables DefaultFunctionArguments
+all: Blocks SimpleFunctions FunctionWithPointers ArraysFunctions CalculateScalarProduct ReferenceVariables DefaultFunctionArguments FunctionOverloading
 
 #mkdir
 checkdir:
@@ -38,6 +38,8 @@ CalculateScalarProduct: CalculateScalarProduct.o
 ReferenceVariables: ReferenceVariables.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 DefaultFunctionArguments: DefaultFunctionArguments.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+FunctionOverloading: FunctionOverloading.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
