@@ -4,7 +4,7 @@
  * @Email       : ychendh@connect.ust.hk
  * @Brief       : Using the Book Class
  * @version 0.1
- * @Date        : 2018-10-05
+ * @Date        : 2018-10-06
  * 
  * @copyright Copyright (c) 2018
  * 
@@ -31,4 +31,28 @@ int main(int argc, char *argv[])
               << promotion_book.title << " is "
               << promotion_book.GetYearOfPublication() // Including empty brackets after using this class method
               << std::endl;
+
+    // Test the overridden constructor
+    Book my_book;
+    std::cout << "The author is " << my_book.author << "\n";
+
+    Book good_read;
+
+    good_read.author = "C S Lewis";
+    good_read.title = "The silver chair";
+    good_read.publisher = "Geoffrey Bles";
+    good_read.price = 699;
+    good_read.format = "paperback";
+    good_read.SetYearOfPublication(1953);
+
+    // Use the overridden copy constructor to create another instance with class members taking identical values
+    Book another_book(good_read);
+    std::cout << "Year of publication of "
+              << another_book.title << " is "
+              << another_book.GetYearOfPublication()
+              << std::endl;
+
+    // Use Specialised constructor
+    Book an_extra_book("The Magician’s nephew");
+    std::cout << "The title is " << an_extra_book.title << "\n";
 }

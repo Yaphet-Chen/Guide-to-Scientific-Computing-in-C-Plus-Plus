@@ -5,7 +5,7 @@
  * @Brief       : Abstraction, Encapsulation and Modularity Properties of Classes
  *                The extension .hpp indicates that is a header file associated with a C++ program. 
  * @version 0.1
- * @Date        : 2018-10-05
+ * @Date        : 2018-10-06
  * 
  * @copyright Copyright (c) 2018
  * 
@@ -36,6 +36,9 @@ to ensure that the contents of a header file are not included more than once. */
 class Book
 {
 public:
+  Book();                      // Overrid default constructor that allocates space in memory for all the variables used
+  Book(const Book &otherBook); // Overridden copy constructor
+  Book(std::string bookTitle); // Specialised constructor
   std::string author, title, publisher, format;
   int price;
   void SetYearOfPublication(int year);
