@@ -5,14 +5,14 @@
  * @Brief       : Abstraction, Encapsulation and Modularity Properties of Classes
  *                The extension .hpp indicates that is a header file associated with a C++ program. 
  * @version 0.1
- * @Date        : 2018-10-04
+ * @Date        : 2018-10-05
  * 
  * @copyright Copyright (c) 2018
  * 
 \*---------------------------------------------------------------------------*/
 
-#include <string>
-/** Encapsulation: the compartmentalisation of all of the resources needed
+/*************************** The Raisond’Être for Classes ***********************************
+ *  Encapsulation: the compartmentalisation of all of the resources needed
  *  Modularity: place similar functionality in a few files and access controls can prevent
  *              users from inadvertently corrupting data. Furthermore, combining functionality
  *              in this way allows us to associate data with the functionality.
@@ -24,10 +24,28 @@
  *  Methods: specification of the functions associated with a class
  **/
 
+/* It doesn’t matter if we include header files such as iostream, string, etc. more than once.
+But we should be very careful not to include files such as Book.hpp more than once, as this can cause problems.*/
+
+#ifndef BOOKHEADERDEF // Only if macro BOOKHEADERDEF not defined, execute lines of code until #endif statement
+#define BOOKHEADERDEF
+/* Define the macro BOOKHEADERDEF. Ensures that this code is only compiled once, no matter how many times it is included.
+As BOOKHEADERDEF is now defined, if this code were to be included a second time all code between the #ifndef BOOKHEADERDEF
+statement and #endif will now not be included. We therefore see that the #ifndef, #define and #endif statements may be used
+to ensure that the contents of a header file are not included more than once. */
+
+#include <string>
+
 class Book
 {
-  public: // Access Privileges: public allows us to access all variables associated with the class.
-    std::string author, title, publisher, format;
-    int price; //Given in pence
-    int yearOfPublication;
+public: // Access Privileges: public allows us to access all variables associated with the class.
+  std::string author, title, publisher, format;
+  int price; //Given in pence
+  void SetYearOfPublication(int year);
+  int GetYearOfPublication() const;
+
+private:
+  int mYearOfPublication;
 }; //Note that the class ends with ;
+
+#endif // Need one of these for every #ifndef statement
