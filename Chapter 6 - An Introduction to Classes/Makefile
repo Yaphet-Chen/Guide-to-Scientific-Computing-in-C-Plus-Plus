@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: UseBookClass
+all: UseBookClass PointersToClasses
 
 #mkdir
 checkdir:
@@ -26,6 +26,8 @@ checkdir:
 # $^ 指代所有前置条件，之间以空格分隔。
 
 UseBookClass: UseBookClass.o Book.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+PointersToClasses: PointersToClasses.o Book.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
