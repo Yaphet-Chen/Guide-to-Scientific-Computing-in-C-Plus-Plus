@@ -35,13 +35,13 @@ to ensure that the contents of a header file are not included more than once. */
 
 class Book
 {
-public: // Access Privileges: public allows us to access all variables associated with the class.
+public:
   std::string author, title, publisher, format;
   int price;
   void SetYearOfPublication(int year);
   int GetYearOfPublication() const;
 
-private: // Access Privileges: private variables may only be accessed by other class members.
+private:
   int mYearOfPublication;
 }; //Note that the class ends with ;
 
