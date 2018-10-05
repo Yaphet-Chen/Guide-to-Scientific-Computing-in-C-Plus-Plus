@@ -24,9 +24,6 @@
  *  Methods: specification of the functions associated with a class
  **/
 
-/* It doesn’t matter if we include header files such as iostream, string, etc. more than once.
-But we should be very careful not to include files such as Book.hpp more than once, as this can cause problems.*/
-
 #ifndef BOOKHEADERDEF // Only if macro BOOKHEADERDEF not defined, execute lines of code until #endif statement
 #define BOOKHEADERDEF
 /* Define the macro BOOKHEADERDEF. Ensures that this code is only compiled once, no matter how many times it is included.
@@ -40,11 +37,11 @@ class Book
 {
 public: // Access Privileges: public allows us to access all variables associated with the class.
   std::string author, title, publisher, format;
-  int price; //Given in pence
+  int price;
   void SetYearOfPublication(int year);
   int GetYearOfPublication() const;
 
-private:
+private: // Access Privileges: private variables may only be accessed by other class members.
   int mYearOfPublication;
 }; //Note that the class ends with ;
 
