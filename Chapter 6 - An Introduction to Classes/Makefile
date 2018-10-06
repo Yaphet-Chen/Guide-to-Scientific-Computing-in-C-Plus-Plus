@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: UseBookClass PointersToClasses UseExampleClass
+all: UseBookClass PointersToClasses UseExampleClass UseComplexNumber
 
 #mkdir
 checkdir:
@@ -30,6 +30,8 @@ UseBookClass: UseBookClass.o Book.o
 PointersToClasses: PointersToClasses.o Book.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 UseExampleClass: UseExampleClass.o ExampleClass.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+UseComplexNumber: UseComplexNumber.o ComplexNumber.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
