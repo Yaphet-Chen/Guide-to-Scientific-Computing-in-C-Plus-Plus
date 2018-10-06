@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-    for (int i = 0; i < 10; i += 2)
+    for (int i = 0; i < 10; i += 2) // Loop counter variables are declared in the context of the loop
     {
         std::cout << i << " ";
     }

@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
     // The GNU C++ compiler will give warnings with flag -Wall, and errors with flag -Werror
 
     /*++++++++++++++++++++++++ Tip 5: Comparing Two Floating Point Numbers ++++++++++++++++++++++++++*/
+    // Variables are declared close to where they are used, rather than at the beginning of a function.
     double p = 5.0, q = 5.0 + DBL_EPSILON;
     int k = 1;
     if (fabs(p - q) < p * DBL_EPSILON)
