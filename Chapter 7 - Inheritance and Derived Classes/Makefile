@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: UseEbookClass
+all: UseEbookClass TestGuest
 
 #mkdir
 checkdir:
@@ -27,6 +27,8 @@ checkdir:
 
 UseEbookClass: UseEbookClass.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^ ../Chapter\ 6\ -\ An\ Introduction\ to\ Classes/Book.cpp
+TestGuest: TestGuest.o Guest.o SpecialGuest.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
 .PHONY:clean
