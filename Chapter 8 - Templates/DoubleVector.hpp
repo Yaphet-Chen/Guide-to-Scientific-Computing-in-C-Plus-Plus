@@ -13,6 +13,9 @@
 /* Templates, a feature that allows very general code to be written.
 One library associated with C++ is the Standard Template Library (STL) */
 
+#ifndef DOUBLEVECTORDEF
+#define DOUBLEVECTORDEF
+
 #include <cassert>
 
 /*---------------------------------------------------------------------------*\
@@ -24,15 +27,17 @@ One library associated with C++ is the Standard Template Library (STL) */
 template <unsigned int DIM>
 class DoubleVector
 {
-  private:
-    double mData[DIM];
+private:
+  double mData[DIM];
 
-  public:
-    double &operator[](int index) // Overloading the [] operator
-    {
-        // Check the index is a valid index before returning the variable requested.
-        assert(index < DIM);
-        assert(index > -1);
-        return (mData[index]);
-    }
+public:
+  double &operator[](int index) // Overloading the [] operator
+  {
+    // Check the index is a valid index before returning the variable requested.
+    assert(index < DIM);
+    assert(index > -1);
+    return (mData[index]);
+  }
 };
+
+#endif

@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: UseDoubleVector GetMaximum VectorsExample
+all: UseDoubleVector GetMaximum VectorsExample UsePoint2d
 
 #mkdir
 checkdir:
@@ -30,6 +30,8 @@ UseDoubleVector: UseDoubleVector.o
 GetMaximum: GetMaximum.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 VectorsExample: VectorsExample.o
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+UsePoint2d: UsePoint2d.o
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
