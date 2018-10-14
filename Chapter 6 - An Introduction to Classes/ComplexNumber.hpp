@@ -29,6 +29,10 @@ class ComplexNumber
     The same format is also applied to member data of classes, class methods as well as to regular functions. */
     ComplexNumber();
     ComplexNumber(double x, double y);
+    /* Members of the class are declared const at the end of the signature to ensure they do not change the class itself
+     * Friend function guarantees that the class which it is given as an argument will remain constant through
+       making the argument a constant reference variable.
+     **/
     double CalculateModulus() const;
     double CalculateArgument() const;
     ComplexNumber CalculatePower(double n) const;
