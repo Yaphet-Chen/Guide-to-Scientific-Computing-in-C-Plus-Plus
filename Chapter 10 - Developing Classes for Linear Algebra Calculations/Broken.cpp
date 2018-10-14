@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
 
     // Error: y still allocated
 }
+
 /*
 g++ -std=c++11 -g -o Broken Broken.cpp
 valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all  ./Broken
