@@ -12,7 +12,7 @@ BIN = ../bin
 #--------------------------------------------------
 #compiling
 #--------------------------------------------------
-all: MpiHelloWorld PointToPoint Barrier CombinedSendRecv_Ring CombinedSendRecv_Chain BcastReduce SummationOfSeries UseMpiVector
+all: MpiHelloWorld PointToPoint Barrier CombinedSendRecv_Ring CombinedSendRecv_Chain BcastReduce SummationOfSeries UseMpiVector Ch11_Tips
 
 #mkdir
 checkdir:
@@ -34,6 +34,8 @@ BcastReduce: BcastReduce.cpp
 SummationOfSeries: SummationOfSeries.cpp
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 UseMpiVector: UseMpiVector.cpp
+	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
+Ch11_Tips: Ch11_Tips.cpp
 	$(CC) $(CFLAGS) -o $(BIN)/$@ $^
 
 #clean
