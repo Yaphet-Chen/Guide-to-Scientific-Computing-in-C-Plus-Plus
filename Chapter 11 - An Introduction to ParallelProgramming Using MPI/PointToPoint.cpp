@@ -3,10 +3,7 @@
  * @Author      : Yipei Chen
  * @Email       : ychendh@connect.ust.hk
  * @Brief       : Point-to-Point Communication
- *                Note that code involving point-to-point communication is necessarily nonsymmetric:
- *                both processes are running exactly the same program with the same code, but parts of
- *                the program which are intended only for one process are placed in specific blocks
- *                guarded by their process rank.
+ *                Point-to-Point communication is not symmetric: one process sends while another receives.
  * @version 0.1
  * @Date        : 2018-10-15
  * 
